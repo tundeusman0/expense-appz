@@ -1,0 +1,77 @@
+* {
+    font-family: cursive;
+    // color: blue;
+    padding: 0;
+    margin: 0;
+   
+}
+
+.is-active{
+    font-weight: bold;
+}
+body{
+    background: white;
+}
+.container{
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 1.6rem;
+}
+
+button{
+    border: none;
+    color: inherit;
+    background-color: initial;
+    cursor: pointer;
+}
+
+form{
+    padding: $default-padding;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+form > input{
+    // background: greenyellow;
+    // color: whitesmoke;
+    padding: $default-padding;
+    border: none;
+    flex: 2;
+}
+form > button{
+    // background: blue;
+    // color: white;
+    padding: $default-padding;
+    margin: 10px;
+}
+.modal > .modal__content{
+    padding: 20px;
+}
+.modal button{
+    // background: blue;
+    // color: white;
+    padding: $default-padding;
+    margin: $default-padding
+}
+.modal h3{
+    font-size: $l-font;
+}
+.modal h4{
+    font-size: $md-font;
+    padding: $default-padding;
+    // color: aliceblue;
+    word-break: break-all;
+}
+.ReactModalPortal .ReactModal__Overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal{
+    max-width: 30rem;
+    text-align: center;
+    outline: none;
+    padding: $default-padding;
+    // background: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
