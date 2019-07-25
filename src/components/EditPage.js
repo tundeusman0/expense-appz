@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import ExpenseForm from "./ExpenseForm";
-import { editExpense, removeExpense } from "./../actions/expenses";
+import { editExpense, startRemoveExpense } from "./../actions/expenses";
 
 const EditPage = ({match,dispatch,expenses,history}) =>(
     <div>
@@ -16,7 +15,7 @@ const EditPage = ({match,dispatch,expenses,history}) =>(
                         history.push("/")
                     }} />
                 <button onClick={() => {
-                    dispatch(removeExpense(match.params.id));
+                    dispatch(startRemoveExpense(match.params.id));
                     history.push("/")
                 }}>Remove</button>
             </div>
