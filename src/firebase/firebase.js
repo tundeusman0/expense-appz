@@ -1,4 +1,6 @@
-import * as firebase from "firebase";
+import * as firebase from "firebase/app";
+import 'firebase/Database';
+import 'firebase/auth';
 
 const firebaseConfig = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -11,69 +13,11 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
 const database = firebase.database();
 
-export { firebase, database as default };
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
-// database.ref("expenses").once("value")
-// .then(snapshot=>{
-//     console.log(snapshot.val())
-//     const expenses = []
-//     snapshot.forEach(expense=>{
-//         console.log(expense.key)
-//         expenses.push({
-//             id: expense.key,
-//             ...expense.val()
-//         })
-//     })
 
-//     console.log(expenses)
-// })
-// .catch((e)=>{
 
-// })
-// database.ref("expenses").push({
-//     description: "to do",
-//     note: "go for it",
-//     amount: 300
-// })
-// database.ref("expenses").push({
-//     description: "second note",
-//     note: "second body",
-//     amount: 6000
-// })
-// database.ref().set({
-//     name: "tunde uthman",
-//     age: 23,
-//     location:{
-//         state:"kwara state",
-//         city: "ilorin"
-//     }
-// })
-// database.ref("location").set({
-//     state: "osun state",
-//     city: "ife"
-// }).then(()=>{
-//     console.log("changed")
-// }).catch((error)=>{
-//     console.log("unable to connect", error)
-// })
-
-// database.ref().update({
-//     job: "software developer",
-//     "location/city": "ife"
-// }).then(()=>{
-//     console.log("update")
-// }).catch(()=>{
-//     console.log("unable to update")
-// })
-
-// database.ref().on("value",snapshot=>{
-//     console.log(snapshot.val())
-// })
-
-// setTimeout(()=>{
-//     database.ref().update({
-//         age: 30
-//     })
-// },6000)
+export { firebase, googleAuthProvider, database as default };
