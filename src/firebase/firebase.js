@@ -1,5 +1,5 @@
 import * as firebase from "firebase/app";
-import 'firebase/Database';
+import 'firebase/database';
 import 'firebase/auth';
 
 const firebaseConfig = {
