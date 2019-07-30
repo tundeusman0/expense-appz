@@ -1,11 +1,13 @@
 .box-layout {
+  margin: 0;
   align-items: center;
   background: url('/images/bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   height: 100vh;
   justify-content: center;
-  width: 100vw;
 }
 
 .box-layout__box {
