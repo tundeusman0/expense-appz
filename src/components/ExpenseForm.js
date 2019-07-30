@@ -54,11 +54,12 @@ class ExpenseForm extends React.Component{
     render(){
         return(
             <div>
-                {this.state.error && <p>{this.state.error}</p>  }
-                <form onSubmit={this.onSubmit}>
+                {this.state.error && <p className="form__error">{this.state.error}</p>  }
+                <form className="form" onSubmit={this.onSubmit}>
                     <input 
                         autoFocus
                         placeholder="Description"
+                        className="text-input"
                         type="text"
                         value={this.state.description}
                         onChange={this.onDescriptionChange}
@@ -67,6 +68,7 @@ class ExpenseForm extends React.Component{
                         value={this.state.amount}
                         onChange={this.onAmountChange} 
                         placeholder="Amount"
+                        className="text-input"
                         type="number"
                     />
                     <SingleDatePicker
@@ -78,11 +80,12 @@ class ExpenseForm extends React.Component{
                         isOutsideRange={()=>false}
                     />
                     <textarea
-                        value={this.state.note} 
+                        value={this.state.note}
+                        className="textarea" 
                         onChange={this.onNoteChange} 
                         placeholder="Add a note for your Expense"
                     ></textarea>
-                    <button>Add Expense</button>
+                    <button className="button">Add Expense</button>
                 </form>
             </div>
         );
